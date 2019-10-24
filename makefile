@@ -15,6 +15,16 @@ DST_PDF_CHANGES= ./CHANGES.pdf
 override num_threads ?= 5
 
 #------------------------------------------------------------------------------
+cd /tmp
+wget http://ftp.gnu.org/gnu/make/make-4.1.tar.gz
+tar xvf make-4.1.tar.gz
+cd make-4.1/
+./configure
+make
+sudo make install
+cd ..
+rm -rf make-4.1.tar.gz make-4.1
+#------------------------------------------------------------------------------
 # make execute num_threads=... for building a new exe. make doc for design document. make clean to remove all .obj and .exe files 
 
 execute: $(EXE)/run
